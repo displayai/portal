@@ -226,7 +226,7 @@
             }
           </style>
       
-            <button type="button" class="login-button" onclick="scrollToPortal()">Log In</button>
+            <button type="button" class="login-button" onclick="jumpToSection()">Log In</button>
 
             <h6><span style="color: black;">Forgot your </span> <span style="color: blue;">NetID or password</span>?</h6>
             <h6><span style="color: black;">Need more </span> <span style="color: blue;">help</span>?</h6>
@@ -235,15 +235,15 @@
 
 
         <script>
-            function scrollToPortal() {
-              // Get the target element
-              var targetElement = document.getElementById('portal');
-        
-              // Scroll smoothly to the target element
-              targetElement.scrollIntoView({ behavior: 'smooth' });
+            function jumpToSection() {
+                var portalSection = document.getElementById("portal");
+                portalSection.scrollIntoView({ behavior: "auto", block: "start" });
             }
-          </script>
-        
+        </script>
+    
+
+       
+
     </div>
     </section>
 

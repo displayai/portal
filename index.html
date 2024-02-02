@@ -106,404 +106,548 @@
       cursor: pointer;
     }
   </style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Styles for the login form */
+    .login-form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .checkbox-label input {
+      margin-right: 5px;
+    }
+
+    .login-button {
+      background-color: #cc0033;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: #990022;
+    }
+  </style>
 </head>
 <body>
 
+    <br><br><br><br><br><br><br>
+    <section  id="login">
+    <div class="login-form">
+        <div class="top-section">
+            <img src="rutgers.png" alt="Rutgers University" style="width: 200px; height: auto; margin-bottom: 10px;">
+            <h1>NetID Login</h1>
+        </div> <br>
+
+      
+        <!-- Login Form -->
+        <form id="loginForm">
+          <label for="netId">NetID:</label>
+          <input type="text" id="netId" name="netId" required>
+      
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <h5><strong>Ensure proper security - keep your password a secret</strong></h5>
+
+          <style>
+            .checkbox-label {
+              display: flex;
+              align-items: auto;
+              margin-bottom: 15px;
+            }
+          
+            .checkbox-label input {
+              margin-right: -130px;
+            }
+          
+            .checkbox-label h6 {
+              margin: 0;
+              font-size: 14px; /* Adjust font size as needed */
+            }
+          </style>
+          
+          
+          <div class="checkbox-label">
+            <input type="checkbox" id="publicWorkstation" name="publicWorkstation">
+            <h6>I am at a public workstation, disable single sign-on</h6>
+          </div>
+      
+          <style>
+            .login-button {
+              display: block;
+              margin: 20px auto; /* Center the button and add margin for spacing */
+              max-width: 400px; /* Adjust the maximum width as needed */
+              width: 100%; /* Make the button take the full width */
+              background-color: #cc0033;
+              color: #fff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+          
+            .login-button:hover {
+              background-color: #990022;
+            }
+          </style>
+      
+            <button type="button" class="login-button" onclick="scrollToPortal()">Log In</button>
+
+            <h6><span style="color: black;">Forgot your </span> <span style="color: blue;">NetID or password</span>?</h6>
+            <h6><span style="color: black;">Need more </span> <span style="color: blue;">help</span>?</h6>
+
+        </form>
+
+
+        <script>
+            function scrollToPortal() {
+              // Get the target element
+              var targetElement = document.getElementById('portal');
+        
+              // Scroll smoothly to the target element
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          </script>
+        
+    </div>
+    </section>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>><br><br><br><br>><br><br><br><br>
 <!-- Top section with Rutgers Portal heading -->
-<div class="top-section">
-  <img src="rutgers.png" alt="Rutgers University" style="width: 200px; height: auto; margin-bottom: 10px;">
-  <h1>Portal</h1>
-</div>
-</head>
-<body>
 
-<div class="container">
-  <!-- Card 1: Personal Information with Profile Image -->
-  <div class="card" style="text-align: center;">
-    <img src="profile_pic.jpeg" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-    <h2 style="color: black;">Akash Hanchur</h2>
-    <h4 style="color: black;">School of Arts and Sciences</h4>
-    <p style="text-align: center;">NetID: ash181</p>
-    <p style="text-align: center;">RUID: 207007779</p>
-    <p style="text-align: center;">Email: ash181@rutgers.edu</p>
-  </div>
+<section id="portal">
+<div>
+        <div class="top-section">
+        <img src="rutgers.png" alt="Rutgers University" style="width: 200px; height: auto; margin-bottom: 10px;">
+        <h1>Portal</h1>
+        </div>
+        </head>
+        <body>
 
-
-    <!-- Card 2: Courses -->
-    <div class="card">
-        <h3 style="color: red;">Course History</h3>
-
-        <!-- Filter Toggle for Year and Semester -->
-        <div class="filter">
-            <label for="year">Year:</label>
-            <select id="year" onchange="filterCourses()">
-                <option value="all">All</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
-
-            <label for="semester">Semester:</label>
-            <select id="semester" onchange="filterCourses()">
-                <option value="all">All</option>
-                <option value="Fall">Fall</option>
-                <option value="Spring">Spring</option>
-            </select>
+        <div class="container">
+        <!-- Card 1: Personal Information with Profile Image -->
+        <div class="card" style="text-align: center;">
+            <img src="profile_pic.jpeg" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+            <h2 style="color: black;">Akash Hanchur</h2>
+            <h4 style="color: black;">School of Arts and Sciences</h4>
+            <p style="text-align: center;">NetID: ash181</p>
+            <p style="text-align: center;">RUID: 207007779</p>
+            <p style="text-align: center;">Email: ash181@rutgers.edu</p>
         </div>
 
-        <!-- Courses Table -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Course Code</th>
-                    <th>Course Name</th>
-                    <th>Credits</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody id="coursesBody">
-                <!-- Course rows will be dynamically populated here -->
-            </tbody>
-        </table>
-    </div>
 
-    <script>
-        // Course data
-            const coursesData = [
-                { Year: 2021, Semester: 'Fall', Name: 'Intro to Psychology', Code: '01:830:101', Credits: 3, Grade: 'A' },
-                { Year: 2021, Semester: 'Fall', Name: 'Calc I for Math and Phy Sci', Code: '01:640:151', Credits: 4, Grade: 'B+' },
-                { Year: 2021, Semester: 'Fall', Name: 'Expository Writing', Code: '01:355:101', Credits: 3, Grade: 'B' },
-                { Year: 2021, Semester: 'Fall', Name: 'Citizenship, Institutions, and the Public', Code: '01:090:101', Credits: 2, Grade: 'P' },
-                
-                { Year: 2022, Semester: 'Spring', Name: 'Intro to Computer Science', Code: '01:198:111', Credits: 4, Grade: 'B' },
-                { Year: 2022, Semester: 'Spring', Name: 'Intro to Logic', Code: '01:730:201', Credits: 3, Grade: 'A' },
-                { Year: 2022, Semester: 'Spring', Name: 'Calc II for Math and Phy Sci', Code: '01:640:152', Credits: 4, Grade: 'B' },
-                { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS', Code: '01:750:203', Credits: 3, Grade: 'B+' },
-                { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS LABORATORY', Code: '01:750:206', Credits: 1, Grade: 'B' },
-                
-                { Year: 2023, Semester: 'Spring', Name: 'Intro to Discrete Structures I', Code: '01:198:205', Credits: 4, Grade: 'B' },
-                { Year: 2023, Semester: 'Spring', Name: 'Computer Architecture', Code: '01:198:211', Credits: 4, Grade: 'B' },
-                { Year: 2023, Semester: 'Spring', Name: 'Principles of Programming', Code: '01:198:314', Credits: 4, Grade: 'A+' },
-                { Year: 2023, Semester: 'Spring', Name: 'Gen Physics II', Code: '50:750:204', Credits: 3, Grade: 'B' },
-                { Year: 2023, Semester: 'Spring', Name: 'Gen Physics Lab', Code: '50:750:134', Credits: 1, Grade: 'B' },
-                
-                { Year: 2023, Semester: 'Fall', Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4, Grade: 'C+' },
-                { Year: 2023, Semester: 'Fall', Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4, Grade: 'B+' },
-                { Year: 2023, Semester: 'Fall', Name: 'Data 101', Code: '01:198:142', Credits: 4, Grade: 'A' },
-                { Year: 2023, Semester: 'Fall', Name: 'Linear Algebra', Code: '01:830:101', Credits: 4, Grade: 'B+' },
-                { Year: 2023, Semester: 'Fall', Name: 'Intro to Art', Code: '33:011:100', Credits: 2, Grade: 'A+' },
-            ];
+            <!-- Card 2: Courses -->
+            <div class="card">
+                <h3 style="color: red;">Course History</h3>
 
-        // Function to filter courses based on selected year and semester
-        function filterCourses() {
-            const selectedYear = document.getElementById('year').value;
-            const selectedSemester = document.getElementById('semester').value;
+                <!-- Filter Toggle for Year and Semester -->
+                <div class="filter">
+                    <label for="year">Year:</label>
+                    <select id="year" onchange="filterCourses()">
+                        <option value="all">All</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
 
-            const filteredCourses = coursesData.filter(course => {
-                return (selectedYear === 'all' || course.Year.toString() === selectedYear) &&
-                    (selectedSemester === 'all' || course.Semester === selectedSemester);
-            });
+                    <label for="semester">Semester:</label>
+                    <select id="semester" onchange="filterCourses()">
+                        <option value="all">All</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Spring">Spring</option>
+                    </select>
+                </div>
 
-            populateCoursesTable(filteredCourses);
-        }
-
-        // // Function to toggle the visibility of the grade
-        // function toggleGradeVisibility(gradeCell, grade) {
-        //     const isHidden = gradeCell.classList.contains('hidden-grade');
-        //     if (isHidden) {
-        //         gradeCell.textContent = grade; // Show the grade
-        //     } else {
-        //         gradeCell.textContent = '👁️'; // Show an eye icon
-        //     }
-        //     gradeCell.classList.toggle('hidden-grade'); // Toggle the hidden-grade class
-        // }
-
-        // Function to populate courses table
-        function populateCoursesTable(courses) {
-            const coursesBody = document.getElementById('coursesBody');
-            coursesBody.innerHTML = '';
-
-            courses.forEach(course => {
-                const row = document.createElement('tr');
-
-                const courseCodeCell = document.createElement('td');
-                courseCodeCell.textContent = course.Code; // Fix: Use 'Code' property
-                row.appendChild(courseCodeCell);
-
-                const courseNameCell = document.createElement('td');
-                courseNameCell.textContent = course.Name; // Fix: Use 'Name' property
-                row.appendChild(courseNameCell);
-
-                const creditsCell = document.createElement('td');
-                creditsCell.textContent = course.Credits; // Fix: Use 'Credits' property
-                row.appendChild(creditsCell);
-
-                const gradeCell = document.createElement('td');
-                // gradeCell.classList.add('hidden-grade'); // Initially hide the grade
-                // gradeCell.textContent = '👁️'; // Eye icon
-                gradeCell.textContent = course.Grade
-                // gradeCell.addEventListener('click', () => {
-                //     toggleGradeVisibility(gradeCell, course.Grade); // Fix: Use 'Grade' property
-                // });
-
-                row.appendChild(gradeCell);
-
-                coursesBody.appendChild(row);
-            });
-        }
-
-        // Set default values to 2023 and Fall
-        document.getElementById('year').value = '2023';
-        document.getElementById('semester').value = 'Fall';
-
-        // Initial population of courses table
-        filterCourses();
-    </script>
-
-    <style>
-        /* Add your styling here */
-        .card {
-            margin: 5px;
-            padding: 20px;
-            border: 3px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        table {
-            width: 100%;
-            margin-top: 10px;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .hidden-grade {
-            cursor: pointer;
-        }
-    </style>
-
-    <!-- Card 3: Major, Minor, and GPA -->
-    <div class="card" style="position: relative; text-align: center;">
-
-        <!-- Major and Minor Information -->
-        <h3 style="color: red;">School of Arts and Sciences</h3>
-        <p>Major: Computer Science</p>
-        <p>Minor: N/A</p>
-    
-        <!-- GPA with Eye Icon -->
-        <div style="margin-top: 20px;">
-            <h2 style="color: ;">GPA</h2>
-            <div id="gpaContainer">
-                <div id="gpaButton" class="green-button" onclick="toggleGPAVisibility()">Click me</div>
-                <p id="gpaContent" style="display: none;"></p>
+                <!-- Courses Table -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Credits</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coursesBody">
+                        <!-- Course rows will be dynamically populated here -->
+                    </tbody>
+                </table>
             </div>
+
+            <script>
+                // Course data
+                    const coursesData = [
+                        { Year: 2021, Semester: 'Fall', Name: 'Intro to Psychology', Code: '01:830:101', Credits: 3, Grade: 'A' },
+                        { Year: 2021, Semester: 'Fall', Name: 'Calc I for Math and Phy Sci', Code: '01:640:151', Credits: 4, Grade: 'B+' },
+                        { Year: 2021, Semester: 'Fall', Name: 'Expository Writing', Code: '01:355:101', Credits: 3, Grade: 'B' },
+                        { Year: 2021, Semester: 'Fall', Name: 'Citizenship, Institutions, and the Public', Code: '01:090:101', Credits: 2, Grade: 'P' },
+                        
+                        { Year: 2022, Semester: 'Spring', Name: 'Intro to Computer Science', Code: '01:198:111', Credits: 4, Grade: 'B' },
+                        { Year: 2022, Semester: 'Spring', Name: 'Intro to Logic', Code: '01:730:201', Credits: 3, Grade: 'A' },
+                        { Year: 2022, Semester: 'Spring', Name: 'Calc II for Math and Phy Sci', Code: '01:640:152', Credits: 4, Grade: 'B' },
+                        { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS', Code: '01:750:203', Credits: 3, Grade: 'B+' },
+                        { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS LABORATORY', Code: '01:750:206', Credits: 1, Grade: 'B' },
+                        
+                        { Year: 2023, Semester: 'Spring', Name: 'Intro to Discrete Structures I', Code: '01:198:205', Credits: 4, Grade: 'B' },
+                        { Year: 2023, Semester: 'Spring', Name: 'Computer Architecture', Code: '01:198:211', Credits: 4, Grade: 'B' },
+                        { Year: 2023, Semester: 'Spring', Name: 'Principles of Programming', Code: '01:198:314', Credits: 4, Grade: 'A+' },
+                        { Year: 2023, Semester: 'Spring', Name: 'Gen Physics II', Code: '50:750:204', Credits: 3, Grade: 'B' },
+                        { Year: 2023, Semester: 'Spring', Name: 'Gen Physics Lab', Code: '50:750:134', Credits: 1, Grade: 'B' },
+                        
+                        { Year: 2023, Semester: 'Fall', Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4, Grade: 'C+' },
+                        { Year: 2023, Semester: 'Fall', Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4, Grade: 'B+' },
+                        { Year: 2023, Semester: 'Fall', Name: 'Data 101', Code: '01:198:142', Credits: 4, Grade: 'A' },
+                        { Year: 2023, Semester: 'Fall', Name: 'Linear Algebra', Code: '01:830:101', Credits: 4, Grade: 'B+' },
+                        { Year: 2023, Semester: 'Fall', Name: 'Intro to Art', Code: '33:011:100', Credits: 2, Grade: 'A+' },
+                    ];
+
+                // Function to filter courses based on selected year and semester
+                function filterCourses() {
+                    const selectedYear = document.getElementById('year').value;
+                    const selectedSemester = document.getElementById('semester').value;
+
+                    const filteredCourses = coursesData.filter(course => {
+                        return (selectedYear === 'all' || course.Year.toString() === selectedYear) &&
+                            (selectedSemester === 'all' || course.Semester === selectedSemester);
+                    });
+
+                    populateCoursesTable(filteredCourses);
+                }
+
+                // // Function to toggle the visibility of the grade
+                // function toggleGradeVisibility(gradeCell, grade) {
+                //     const isHidden = gradeCell.classList.contains('hidden-grade');
+                //     if (isHidden) {
+                //         gradeCell.textContent = grade; // Show the grade
+                //     } else {
+                //         gradeCell.textContent = '👁️'; // Show an eye icon
+                //     }
+                //     gradeCell.classList.toggle('hidden-grade'); // Toggle the hidden-grade class
+                // }
+
+                // Function to populate courses table
+                function populateCoursesTable(courses) {
+                    const coursesBody = document.getElementById('coursesBody');
+                    coursesBody.innerHTML = '';
+
+                    courses.forEach(course => {
+                        const row = document.createElement('tr');
+
+                        const courseCodeCell = document.createElement('td');
+                        courseCodeCell.textContent = course.Code; // Fix: Use 'Code' property
+                        row.appendChild(courseCodeCell);
+
+                        const courseNameCell = document.createElement('td');
+                        courseNameCell.textContent = course.Name; // Fix: Use 'Name' property
+                        row.appendChild(courseNameCell);
+
+                        const creditsCell = document.createElement('td');
+                        creditsCell.textContent = course.Credits; // Fix: Use 'Credits' property
+                        row.appendChild(creditsCell);
+
+                        const gradeCell = document.createElement('td');
+                        // gradeCell.classList.add('hidden-grade'); // Initially hide the grade
+                        // gradeCell.textContent = '👁️'; // Eye icon
+                        gradeCell.textContent = course.Grade
+                        // gradeCell.addEventListener('click', () => {
+                        //     toggleGradeVisibility(gradeCell, course.Grade); // Fix: Use 'Grade' property
+                        // });
+
+                        row.appendChild(gradeCell);
+
+                        coursesBody.appendChild(row);
+                    });
+                }
+
+                // Set default values to 2023 and Fall
+                document.getElementById('year').value = '2023';
+                document.getElementById('semester').value = 'Fall';
+
+                // Initial population of courses table
+                filterCourses();
+            </script>
+
+            <style>
+                /* Add your styling here */
+                .card {
+                    margin: 5px;
+                    padding: 20px;
+                    border: 3px solid #ccc;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                table {
+                    width: 100%;
+                    margin-top: 10px;
+                    border-collapse: collapse;
+                }
+
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                }
+
+                th {
+                    background-color: #f2f2f2;
+                }
+
+                .hidden-grade {
+                    cursor: pointer;
+                }
+            </style>
+
+            <!-- Card 3: Major, Minor, and GPA -->
+            <div class="card" style="position: relative; text-align: center;">
+
+                <!-- Major and Minor Information -->
+                <h3 style="color: red;">School of Arts and Sciences</h3>
+                <p>Major: Computer Science</p>
+                <p>Minor: N/A</p>
+            
+                <!-- GPA with Eye Icon -->
+                <div style="margin-top: 20px;">
+                    <h2 style="color: ;">GPA</h2>
+                    <div id="gpaContainer">
+                        <div id="gpaButton" class="green-button" onclick="toggleGPAVisibility()">Click me</div>
+                        <p id="gpaContent" style="display: none;"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                /* Styling for the maroon button (GPA) */
+                .green-button {
+                    background-color: maroon; /* Change to maroon color */
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 50%; /* Make it circular */
+                    cursor: pointer;
+                    display: inline-block;
+                }
+            
+                /* Styling for the clicked state */
+                .green-button.clicked {
+                    background-color: white;
+                    color: maroon; /* Change to maroon color */
+                }
+            </style>
+            
+            
+            <script>
+                // Function to toggle the visibility of GPA
+                function toggleGPAVisibility() {
+                    const gpaContent = document.getElementById('gpaContent');
+                    const gpaButton = document.getElementById('gpaButton');
+                    const eyeIcon = document.getElementById('eyeIcon');
+            
+                    const isHidden = gpaContent.style.display === 'none';
+            
+                    if (isHidden) {
+                        gpaContent.style.display = 'block';
+                        gpaButton.innerHTML = "3.41";
+                        gpaButton.classList.add("clicked");
+                        eyeIcon.style.color = 'transparent'; // Make the eye icon transparent when GPA is revealed
+                    } else {
+                        gpaContent.style.display = 'none';
+                        gpaButton.innerHTML = "Click me";
+                        gpaButton.classList.remove("clicked");
+                        eyeIcon.style.color = '#7f8c8d'; // Set the color of the eye icon (grey)
+                    }
+                }
+            </script>
+            
+
+        <!-- Card 5: class-schedule-card -->
+        <div class="card" ">
+            <h3 style="color: red;">Current Semester Class Schedule</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody id="currentScheduleBody">
+                    <!-- Course rows will be dynamically populated here -->
+                </tbody>
+            </table>
+
+            <script>
+                // Data for the current semester class schedule
+                const currentSemesterSchedule = [
+                    { Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4 },
+                    { Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4 },
+                    { Name: 'Data 101', Code: '01:198:142', Credits: 4 },
+                    { Name: 'Linear Algebra', Code: '01:830:101', Credits: 4 },
+                    { Name: 'Intro to Art', Code: '33:011:100', Credits: 2 },
+                ];
+
+                // Function to toggle the visibility of course details
+                function toggleCourseDetails(courseRow, course) {
+                    const detailsRow = courseRow.nextElementSibling;
+
+                    if (detailsRow.classList.contains('hidden-toggle')) {
+                        // Show course details
+                        detailsRow.innerHTML = `<td colspan="2">Code: ${course.Code}, Credits: ${course.Credits}</td>`;
+                        detailsRow.classList.remove('hidden-toggle');
+                    } else {
+                        // Hide course details
+                        detailsRow.innerHTML = "";
+                        detailsRow.classList.add('hidden-toggle');
+                    }
+                }
+
+                // Function to toggle the icon
+                function toggleIcon(icon) {
+                    icon.classList.toggle('open');
+                }
+
+                // Function to populate current semester class schedule table
+                function populateCurrentScheduleTable(schedule) {
+                    const currentScheduleBody = document.getElementById('currentScheduleBody');
+                    currentScheduleBody.innerHTML = '';
+
+                    schedule.forEach(course => {
+                        const row = document.createElement('tr');
+
+                        // Add toggle icon in a separate cell
+                        const iconCell = document.createElement('td');
+                        const icon = document.createElement('span');
+                        icon.className = 'toggle-icon';
+                        icon.textContent = '▸';
+                        icon.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            toggleCourseDetails(row, course);
+                            toggleIcon(icon);
+                        });
+                        iconCell.appendChild(icon);
+                        row.appendChild(iconCell);
+
+                        // Add course name in a separate cell
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = course.Name;
+                        row.appendChild(nameCell);
+
+                        currentScheduleBody.appendChild(row);
+
+                        // Hidden row for course details
+                        const detailsRow = document.createElement('tr');
+                        detailsRow.classList.add('hidden-toggle');
+                        currentScheduleBody.appendChild(detailsRow);
+                    });
+                }
+
+
+                // Initial population of current semester class schedule table
+                populateCurrentScheduleTable(currentSemesterSchedule);
+            </script>
+
+            <style>
+                .toggle-icon {
+                    cursor: pointer;
+                    user-select: none;
+                    margin-right: 5px;
+                    display: inline-block;
+                    font-size: 12px; /* Change the font size as per your preference */
+                }
+
+                .open {
+                    transform: rotate(90deg);
+                }
+            </style>
         </div>
-    </div>
-    
-    <style>
-        /* Styling for the maroon button (GPA) */
-        .green-button {
-            background-color: maroon; /* Change to maroon color */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50%; /* Make it circular */
-            cursor: pointer;
-            display: inline-block;
-        }
-    
-        /* Styling for the clicked state */
-        .green-button.clicked {
-            background-color: white;
-            color: maroon; /* Change to maroon color */
-        }
-    </style>
-    
-    
-    <script>
-        // Function to toggle the visibility of GPA
-        function toggleGPAVisibility() {
-            const gpaContent = document.getElementById('gpaContent');
-            const gpaButton = document.getElementById('gpaButton');
-            const eyeIcon = document.getElementById('eyeIcon');
-    
-            const isHidden = gpaContent.style.display === 'none';
-    
-            if (isHidden) {
-                gpaContent.style.display = 'block';
-                gpaButton.innerHTML = "3.41";
-                gpaButton.classList.add("clicked");
-                eyeIcon.style.color = 'transparent'; // Make the eye icon transparent when GPA is revealed
-            } else {
-                gpaContent.style.display = 'none';
-                gpaButton.innerHTML = "Click me";
-                gpaButton.classList.remove("clicked");
-                eyeIcon.style.color = '#7f8c8d'; // Set the color of the eye icon (grey)
+
+
+        <!-- Card 4: My Money -->
+        <div class="card" style="text-align: center; position: relative;">
+
+            <!-- My Money Information -->
+            <h3 style="color: red;">Term Bill</h3>
+            <p>Payment Due: Wed Jan 10, 2024</p>
+            <p>Billable Credit Hours: 18</p>
+
+            <!-- Green Button -->
+            <div id="greenButton" class="green-button" onclick="changeText()">View Bill</div>
+
+        </div>
+
+        <style>
+            /* Styling for the green button */
+            .green-button {
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                cursor: pointer;
             }
-        }
-    </script>
-    
 
-<!-- Card 5: class-schedule-card -->
-<div class="card" ">
-    <h3 style="color: red;">Current Semester Class Schedule</h3>
-
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th>Course Name</th>
-            </tr>
-        </thead>
-        <tbody id="currentScheduleBody">
-            <!-- Course rows will be dynamically populated here -->
-        </tbody>
-    </table>
-
-    <script>
-        // Data for the current semester class schedule
-        const currentSemesterSchedule = [
-            { Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4 },
-            { Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4 },
-            { Name: 'Data 101', Code: '01:198:142', Credits: 4 },
-            { Name: 'Linear Algebra', Code: '01:830:101', Credits: 4 },
-            { Name: 'Intro to Art', Code: '33:011:100', Credits: 2 },
-        ];
-
-        // Function to toggle the visibility of course details
-        function toggleCourseDetails(courseRow, course) {
-            const detailsRow = courseRow.nextElementSibling;
-
-            if (detailsRow.classList.contains('hidden-toggle')) {
-                // Show course details
-                detailsRow.innerHTML = `<td colspan="2">Code: ${course.Code}, Credits: ${course.Credits}</td>`;
-                detailsRow.classList.remove('hidden-toggle');
-            } else {
-                // Hide course details
-                detailsRow.innerHTML = "";
-                detailsRow.classList.add('hidden-toggle');
+            /* Styling for the clicked state */
+            .green-button.clicked {
+                background-color: white;
+                color: green;
             }
-        }
+        </style>
 
-        // Function to toggle the icon
-        function toggleIcon(icon) {
-            icon.classList.toggle('open');
-        }
+        <script>
+            function changeText() {
+                // Get the green button element
+                var button = document.getElementById("greenButton");
 
-        // Function to populate current semester class schedule table
-        function populateCurrentScheduleTable(schedule) {
-            const currentScheduleBody = document.getElementById('currentScheduleBody');
-            currentScheduleBody.innerHTML = '';
+                // Check if the button has the 'clicked' class
+                if (button.classList.contains("clicked")) {
+                    // If clicked, reset to default state
+                    button.innerHTML = "Click me";
+                    button.classList.remove("clicked");
+                } else {
+                    // If not clicked, change text to $0 and apply the 'clicked' class
+                    button.innerHTML = "$0";
+                    button.classList.add("clicked");
+                }
+            }
+        </script>
 
-            schedule.forEach(course => {
-                const row = document.createElement('tr');
-
-                // Add toggle icon in a separate cell
-                const iconCell = document.createElement('td');
-                const icon = document.createElement('span');
-                icon.className = 'toggle-icon';
-                icon.textContent = '▸';
-                icon.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    toggleCourseDetails(row, course);
-                    toggleIcon(icon);
-                });
-                iconCell.appendChild(icon);
-                row.appendChild(iconCell);
-
-                // Add course name in a separate cell
-                const nameCell = document.createElement('td');
-                nameCell.textContent = course.Name;
-                row.appendChild(nameCell);
-
-                currentScheduleBody.appendChild(row);
-
-                // Hidden row for course details
-                const detailsRow = document.createElement('tr');
-                detailsRow.classList.add('hidden-toggle');
-                currentScheduleBody.appendChild(detailsRow);
-            });
-        }
-
-
-        // Initial population of current semester class schedule table
-        populateCurrentScheduleTable(currentSemesterSchedule);
-    </script>
-
-    <style>
-        .toggle-icon {
-            cursor: pointer;
-            user-select: none;
-            margin-right: 5px;
-            display: inline-block;
-            font-size: 12px; /* Change the font size as per your preference */
-        }
-
-        .open {
-            transform: rotate(90deg);
-        }
-    </style>
+        </div>
 </div>
-
-
-<!-- Card 4: My Money -->
-<div class="card" style="text-align: center; position: relative;">
-
-    <!-- My Money Information -->
-    <h3 style="color: red;">Term Bill</h3>
-    <p>Payment Due: Wed Jan 10, 2024</p>
-    <p>Billable Credit Hours: 18</p>
-
-    <!-- Green Button -->
-    <div id="greenButton" class="green-button" onclick="changeText()">View Bill</div>
-
-</div>
-
-<style>
-    /* Styling for the green button */
-    .green-button {
-        background-color: green;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    /* Styling for the clicked state */
-    .green-button.clicked {
-        background-color: white;
-        color: green;
-    }
-</style>
-
-<script>
-    function changeText() {
-        // Get the green button element
-        var button = document.getElementById("greenButton");
-
-        // Check if the button has the 'clicked' class
-        if (button.classList.contains("clicked")) {
-            // If clicked, reset to default state
-            button.innerHTML = "Click me";
-            button.classList.remove("clicked");
-        } else {
-            // If not clicked, change text to $0 and apply the 'clicked' class
-            button.innerHTML = "$0";
-            button.classList.add("clicked");
-        }
-    }
-</script>
-
-</div>
-
+</section>
 
 </body>
 </html>

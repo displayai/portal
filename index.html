@@ -207,16 +207,16 @@
             populateCoursesTable(filteredCourses);
         }
 
-        // Function to toggle the visibility of the grade
-        function toggleGradeVisibility(gradeCell, grade) {
-            const isHidden = gradeCell.classList.contains('hidden-grade');
-            if (isHidden) {
-                gradeCell.textContent = grade; // Show the grade
-            } else {
-                gradeCell.textContent = '👁️'; // Show an eye icon
-            }
-            gradeCell.classList.toggle('hidden-grade'); // Toggle the hidden-grade class
-        }
+        // // Function to toggle the visibility of the grade
+        // function toggleGradeVisibility(gradeCell, grade) {
+        //     const isHidden = gradeCell.classList.contains('hidden-grade');
+        //     if (isHidden) {
+        //         gradeCell.textContent = grade; // Show the grade
+        //     } else {
+        //         gradeCell.textContent = '👁️'; // Show an eye icon
+        //     }
+        //     gradeCell.classList.toggle('hidden-grade'); // Toggle the hidden-grade class
+        // }
 
         // Function to populate courses table
         function populateCoursesTable(courses) {
@@ -239,12 +239,12 @@
                 row.appendChild(creditsCell);
 
                 const gradeCell = document.createElement('td');
-                gradeCell.classList.add('hidden-grade'); // Initially hide the grade
-                gradeCell.textContent = '👁️'; // Eye icon
-
-                gradeCell.addEventListener('click', () => {
-                    toggleGradeVisibility(gradeCell, course.Grade); // Fix: Use 'Grade' property
-                });
+                // gradeCell.classList.add('hidden-grade'); // Initially hide the grade
+                // gradeCell.textContent = '👁️'; // Eye icon
+                gradeCell.textContent = course.Grade
+                // gradeCell.addEventListener('click', () => {
+                //     toggleGradeVisibility(gradeCell, course.Grade); // Fix: Use 'Grade' property
+                // });
 
                 row.appendChild(gradeCell);
 
@@ -463,7 +463,7 @@
     <p>Billable Credit Hours: 18</p>
 
     <!-- Green Button -->
-    <div id="greenButton" class="green-button" onclick="changeText()">💵 View Bill 💰</div>
+    <div id="greenButton" class="green-button" onclick="changeText()">View Bill</div>
 
 </div>
 

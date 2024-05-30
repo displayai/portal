@@ -233,7 +233,6 @@
 
         </form>
 
-
         <script>
             function jumpToSection() {
                 var portalSection = document.getElementById("portal");
@@ -241,9 +240,6 @@
             }
         </script>
     
-
-       
-
     </div>
     </section>
 
@@ -284,6 +280,7 @@
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
+                        <option value="2024">2024</option>
                     </select>
 
                     <label for="semester">Semester:</label>
@@ -335,7 +332,13 @@
                         { Year: 2023, Semester: 'Fall', Name: 'Data 101', Code: '01:198:142', Credits: 4, Grade: 'A' },
                         { Year: 2023, Semester: 'Fall', Name: 'Linear Algebra', Code: '01:830:101', Credits: 4, Grade: 'B+' },
                         { Year: 2023, Semester: 'Fall', Name: 'Intro to Art', Code: '33:011:100', Credits: 2, Grade: 'A+' },
+
+                        { Year: 2024, Semester: 'Spring', Name: 'Database Systems Implementation', Code: '01:198:437', Credits: 4, Grade: 'B' },
+                        { Year: 2024, Semester: 'Spring', Name: 'Computer Organization', Code: '21:198:251', Credits: 4, Grade: 'A' },
+                        { Year: 2024, Semester: 'Spring', Name: 'Discrete Mathematics', Code: '14:332:312', Credits: 4, Grade: 'C+' },
+                        { Year: 2024, Semester: 'Spring', Name: 'Systems Programming', Code: '01:198:214', Credits: 4, Grade: 'A+' }
                     ];
+                    
 
                 // Function to filter courses based on selected year and semester
                 function filterCourses() {
@@ -396,8 +399,8 @@
                 }
 
                 // Set default values to 2023 and Fall
-                document.getElementById('year').value = '2023';
-                document.getElementById('semester').value = 'Fall';
+                document.getElementById('year').value = '2024';
+                document.getElementById('semester').value = 'Spring';
 
                 // Initial population of courses table
                 filterCourses();
@@ -513,13 +516,13 @@
 
             <script>
                 // Data for the current semester class schedule
-                const currentSemesterSchedule = [
-                    { Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4 },
-                    { Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4 },
-                    { Name: 'Data 101', Code: '01:198:142', Credits: 4 },
-                    { Name: 'Linear Algebra', Code: '01:830:101', Credits: 4 },
-                    { Name: 'Intro to Art', Code: '33:011:100', Credits: 2 },
-                ];
+                // const currentSemesterSchedule = [
+                //     { Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4 },
+                //     { Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4 },
+                //     { Name: 'Data 101', Code: '01:198:142', Credits: 4 },
+                //     { Name: 'Linear Algebra', Code: '01:830:101', Credits: 4 },
+                //     { Name: 'Intro to Art', Code: '33:011:100', Credits: 2 },
+                // ];
 
                 // Function to toggle the visibility of course details
                 function toggleCourseDetails(courseRow, course) {

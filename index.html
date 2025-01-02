@@ -288,6 +288,7 @@
                         <option value="all">All</option>
                         <option value="Fall">Fall</option>
                         <option value="Spring">Spring</option>
+                        <option value="Spring">Fall</option>
                     </select>
                 </div>
 
@@ -309,36 +310,41 @@
 
             <script>
                 // Course data
-                    const coursesData = [
-                        { Year: 2021, Semester: 'Fall', Name: 'Intro to Psychology', Code: '01:830:101', Credits: 3, Grade: 'A' },
-                        { Year: 2021, Semester: 'Fall', Name: 'Calc I for Math and Phy Sci', Code: '01:640:151', Credits: 4, Grade: 'B+' },
-                        { Year: 2021, Semester: 'Fall', Name: 'Expository Writing', Code: '01:355:101', Credits: 3, Grade: 'B' },
-                        { Year: 2021, Semester: 'Fall', Name: 'Citizenship, Institutions, and the Public', Code: '01:090:101', Credits: 2, Grade: 'P' },
-                        
-                        { Year: 2022, Semester: 'Spring', Name: 'Intro to Computer Science', Code: '01:198:111', Credits: 4, Grade: 'B' },
-                        { Year: 2022, Semester: 'Spring', Name: 'Intro to Logic', Code: '01:730:201', Credits: 3, Grade: 'A' },
-                        { Year: 2022, Semester: 'Spring', Name: 'Calc II for Math and Phy Sci', Code: '01:640:152', Credits: 4, Grade: 'B' },
-                        { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS', Code: '01:750:203', Credits: 3, Grade: 'B+' },
-                        { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS LABORATORY', Code: '01:750:206', Credits: 1, Grade: 'B' },
-                        
-                        { Year: 2023, Semester: 'Spring', Name: 'Intro to Discrete Structures I', Code: '01:198:205', Credits: 4, Grade: 'B' },
-                        { Year: 2023, Semester: 'Spring', Name: 'Computer Architecture', Code: '01:198:211', Credits: 4, Grade: 'B' },
-                        { Year: 2023, Semester: 'Spring', Name: 'Principles of Programming', Code: '01:198:314', Credits: 4, Grade: 'A+' },
-                        { Year: 2023, Semester: 'Spring', Name: 'Gen Physics II', Code: '50:750:204', Credits: 3, Grade: 'B' },
-                        { Year: 2023, Semester: 'Spring', Name: 'Gen Physics Lab', Code: '50:750:134', Credits: 1, Grade: 'B' },
-                        
-                        { Year: 2023, Semester: 'Fall', Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4, Grade: 'C+' },
-                        { Year: 2023, Semester: 'Fall', Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4, Grade: 'B+' },
-                        { Year: 2023, Semester: 'Fall', Name: 'Data 101', Code: '01:198:142', Credits: 4, Grade: 'A' },
-                        { Year: 2023, Semester: 'Fall', Name: 'Linear Algebra', Code: '01:830:101', Credits: 4, Grade: 'B+' },
-                        { Year: 2023, Semester: 'Fall', Name: 'Intro to Art', Code: '33:011:100', Credits: 2, Grade: 'A+' },
+                const coursesData = [
+                    { Year: 2021, Semester: 'Fall', Name: 'Intro to Psychology', Code: '01:830:101', Credits: 3, Grade: 'A' },
+                    { Year: 2021, Semester: 'Fall', Name: 'Calc I for Math and Phy Sci', Code: '01:640:151', Credits: 4, Grade: 'B+' },
+                    { Year: 2021, Semester: 'Fall', Name: 'Expository Writing', Code: '01:355:101', Credits: 3, Grade: 'B' },
+                    { Year: 2021, Semester: 'Fall', Name: 'Citizenship, Institutions, and the Public', Code: '01:090:101', Credits: 2, Grade: 'P' },
 
-                        { Year: 2024, Semester: 'Spring', Name: 'Database Systems Implementation', Code: '01:198:437', Credits: 4, Grade: 'B' },
-                        { Year: 2024, Semester: 'Spring', Name: 'Computer Organization', Code: '21:198:251', Credits: 4, Grade: 'A' },
-                        { Year: 2024, Semester: 'Spring', Name: 'Discrete Mathematics', Code: '14:332:312', Credits: 4, Grade: 'C+' },
-                        { Year: 2024, Semester: 'Spring', Name: 'Systems Programming', Code: '01:198:214', Credits: 4, Grade: 'A+' }
-                    ];
-                    
+                    { Year: 2022, Semester: 'Spring', Name: 'Intro to Computer Science', Code: '01:198:111', Credits: 4, Grade: 'B' },
+                    { Year: 2022, Semester: 'Spring', Name: 'Intro to Logic', Code: '01:730:201', Credits: 3, Grade: 'A' },
+                    { Year: 2022, Semester: 'Spring', Name: 'Calc II for Math and Phy Sci', Code: '01:640:152', Credits: 4, Grade: 'B' },
+                    { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS', Code: '01:750:203', Credits: 3, Grade: 'B+' },
+                    { Year: 2022, Semester: 'Spring', Name: 'GENERAL PHYSICS LABORATORY', Code: '01:750:206', Credits: 1, Grade: 'B' },
+
+                    { Year: 2023, Semester: 'Spring', Name: 'Intro to Discrete Structures I', Code: '01:198:205', Credits: 4, Grade: 'B' },
+                    { Year: 2023, Semester: 'Spring', Name: 'Computer Architecture', Code: '01:198:211', Credits: 4, Grade: 'B' },
+                    { Year: 2023, Semester: 'Spring', Name: 'Principles of Programming', Code: '01:198:314', Credits: 4, Grade: 'A+' },
+                    { Year: 2023, Semester: 'Spring', Name: 'Gen Physics II', Code: '50:750:204', Credits: 3, Grade: 'B' },
+                    { Year: 2023, Semester: 'Spring', Name: 'Gen Physics Lab', Code: '50:750:134', Credits: 1, Grade: 'B' },
+
+                    { Year: 2023, Semester: 'Fall', Name: 'Comp Algorithms', Code: '01:198:344', Credits: 4, Grade: 'C+' },
+                    { Year: 2023, Semester: 'Fall', Name: 'Comp Architecture II', Code: '01:98:411', Credits: 4, Grade: 'B+' },
+                    { Year: 2023, Semester: 'Fall', Name: 'Data 101', Code: '01:198:142', Credits: 4, Grade: 'A' },
+                    { Year: 2023, Semester: 'Fall', Name: 'Linear Algebra', Code: '01:830:101', Credits: 4, Grade: 'B+' },
+                    { Year: 2023, Semester: 'Fall', Name: 'Intro to Art', Code: '33:011:100', Credits: 2, Grade: 'A+' },
+
+                    { Year: 2024, Semester: 'Spring', Name: 'Database Systems Implementation', Code: '01:198:437', Credits: 4, Grade: 'B' },
+                    { Year: 2024, Semester: 'Spring', Name: 'Computer Organization', Code: '21:198:251', Credits: 4, Grade: 'A' },
+                    { Year: 2024, Semester: 'Spring', Name: 'Discrete Mathematics', Code: '14:332:312', Credits: 4, Grade: 'C+' },
+                    { Year: 2024, Semester: 'Spring', Name: 'Systems Programming', Code: '01:198:214', Credits: 4, Grade: 'A+' },
+
+                    { Year: 2024, Semester: 'Fall', Name: 'Intro to Data Science', Code: '01:198:439', Credits: 4, Grade: 'B+' },
+                    { Year: 2024, Semester: 'Fall', Name: 'Intro to AI', Code: '01:198:440', Credits: 4, Grade: 'A' },
+                    { Year: 2024, Semester: 'Fall', Name: 'Software Methodology', Code: '01:198:213', Credits: 4, Grade: 'B' },
+                    { Year: 2024, Semester: 'Fall', Name: 'Machine Learning Principles', Code: '01:198:461', Credits: 4, Grade: 'B+' }
+                ];
+
 
                 // Function to filter courses based on selected year and semester
                 function filterCourses() {
@@ -400,7 +406,7 @@
 
                 // Set default values to 2023 and Fall
                 document.getElementById('year').value = '2024';
-                document.getElementById('semester').value = 'Spring';
+                document.getElementById('semester').value = 'Fall';
 
                 // Initial population of courses table
                 filterCourses();
@@ -601,17 +607,28 @@
 
 
         <!-- Card 4: My Money -->
-        <div class="card" style="text-align: center; position: relative;">
+      <div class="card" style="text-align: center; position: relative;">
 
-            <!-- My Money Information -->
-            <h3 style="color: red;">Term Bill</h3>
-           <p>Payment Due: Aug 30 2024</p>
-            <p>Billable Credit Hours: 14 </p>
+        <!-- My Money Information -->
+        <h3 style="color: red;">Term Bill</h3>
+        <p>Payment Due: Aug 30 2024</p>
+        <p>Billable Credit Hours: 14 </p>
 
-            <!-- Green Button -->
-            <div id="greenButton" class="green-button" onclick="changeText()">View Bill</div>
-
+        <!-- Term Bill Breakdown -->
+        <div style="margin-top: 20px; text-align: left; padding: 10px; border: 1px solid #ccc; display: inline-block;">
+            <p><strong>Computer Fee:</strong> $171.00</p>
+            <p><strong>PIRG:</strong> $11.20</p>
+            <p><strong>Campus Fee:</strong> $1,141.95</p>
+            <p><strong>Tuition:</strong> $18,115.00</p>
+            <hr style="border: 1px solid #ccc;">
+            <p><strong>Total Charges:</strong> $19,439.15</p>
         </div>
+
+        <!-- Green Button -->
+        <div id="greenButton" class="green-button" style="margin-top: 20px;" onclick="changeText()">View Bill</div>
+
+      </div>
+
 
         <style>
             /* Styling for the green button */
